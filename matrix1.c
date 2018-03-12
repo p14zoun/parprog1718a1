@@ -17,7 +17,7 @@ void get_walltime(double *wct) {
 int main() {
 double *table;
 double ts,te;
-
+int i,j;
 
   table = (double *)malloc(NROWS*NCOLS*sizeof(double)); 
   if (table==NULL) {
@@ -27,7 +27,10 @@ double ts,te;
 
   // warmup
 
-  // ...your code here...
+  // ...your code here..
+	for (i=0; i<NROWS*NCOLS; i++) {
+		table[i]=1.0;
+	}
 
   // get starting time (double, seconds) 
   get_walltime(&ts);
@@ -36,7 +39,13 @@ double ts,te;
 
   // ...your code here...
 
-  // get ending time
+	for (i=0; i<NROWS; i++) {
+		for (j=0; j<NCOLS; j++) {
+			table[i*NCOLS + j];        
+		}	
+	} 
+
+  // get ending time  
   get_walltime(&te);
 
   // check results
