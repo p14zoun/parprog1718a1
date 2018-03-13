@@ -27,15 +27,15 @@ int i,j;
 
   // warmup
 
-  // ...your code here..
+  // ...your code here..             edw ginetai i arxikopoisi tou pinaka
 	for (i=0; i<NROWS*NCOLS; i++) {
 		table[i]=1.0;
 	}
 
-  // get starting time (double, seconds) 
+  // get starting time (double, seconds) ksekinaei na metraei ti diadikasia gia na bgalei sto telos ton xrono 
   get_walltime(&ts);
   
-  // workload ana stili                                  ana stili
+  // workload ana stili                              prospelasi tou pinaka ana stili
 	for (i=0; i<NCOLS; i++) {
 		for (j=0; j<NROWS; j++) {
 			table[j*NCOLS +i]=table[j*NCOLS +i]+13;              
@@ -44,27 +44,27 @@ int i,j;
 
   // ...your code here...
 
-  // get ending time  
+  // get ending time    stamataei to xrono gia na doyme poso xreiastike
   get_walltime(&te);
 
-  // check results
+  // check results  parakatw checkarw an einai swsta ta apotelesmata me vasi tin praksi poy exw kanei (diladi +13 stin arxiki timi)
   
   // ...your code here...
 
 	for (i=0; i<NROWS*NCOLS; i++) {
-		if (table[i]!=14.0) {  //an den einai iso me to arxiko+13 pou tou edwsa 
+		if (table[i]!=14.0) {  //an den einai iso me to arxiko+13 pou tou edwsa tote yparxei lathos
 			printf("There was a problem!");		
 		}
 		
 	}
   // print time elapsed and/or Maccesses/sec
 	
-	double timepassed= te-ts; //orizo timepassed=end-start
+	double timepassed= te-ts; //orizo timepassed=end-start    gia na dw poso xrono pire apo ti stigmi poyu arxise na metraei me tin getwalltime
 	printf("\n\ntimepassed: %lf\n",timepassed);		
 		
   // ...your code here...  
   
-  free(table);
+  free(table); //adiasma tis mnimis toy pinaka
 
   return 0;
 }
