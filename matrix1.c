@@ -35,15 +35,14 @@ int i,j;
   // get starting time (double, seconds) 
   get_walltime(&ts);
   
-  // workload
-
-  // ...your code here...
-
-	for (i=0; i<NROWS; i++) {
-		for (j=0; j<NCOLS; j++) {
-			table[i*NCOLS + j];        
+  // workload ana stili                                  ana stili
+	for (i=0; i<NCOLS; i++) {
+		for (j=0; j<NROWS; j++) {
+			table[j*NCOLS +i]=table[j*NCOLS +i]+13;              
 		}	
 	} 
+
+  // ...your code here...
 
   // get ending time  
   get_walltime(&te);
@@ -52,8 +51,17 @@ int i,j;
   
   // ...your code here...
 
+	for (i=0; i<NROWS*NCOLS; i++) {
+		if (table[i]!=14.0) {  //an den einai iso me to arxiko+13 pou tou edwsa 
+			printf("There was a problem!");		
+		}
+		
+	}
   // print time elapsed and/or Maccesses/sec
-  
+	
+	double timepassed= te-ts; //orizo timepassed=end-start
+	printf("\n\ntimepassed: %lf\n",timepassed);		
+		
   // ...your code here...  
   
   free(table);
